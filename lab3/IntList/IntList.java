@@ -1,5 +1,7 @@
 import java.util.Formatter;
 
+import javax.print.DocFlavor.INPUT_STREAM;
+
 /**
  * A naked recursive list of integers, similar to what we saw in lecture 3, but
  * with a large number of additional methods.
@@ -106,6 +108,19 @@ public class IntList {
         }
         temp.rest = B;
         return catenateIntList;
+    }
+
+    public static IntList reverse(IntList inpuIntList){
+        if(inpuIntList == null){
+            return null;
+        }else{
+            IntList temp = new IntList(inpuIntList.first,null); 
+            while(inpuIntList.rest != null){
+                temp = new IntList(inpuIntList.rest.first,temp);
+                inpuIntList.rest = inpuIntList.rest.rest;
+            }
+            return temp;
+        }
     }
 
 

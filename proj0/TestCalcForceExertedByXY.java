@@ -1,4 +1,3 @@
-import java.math.*;
 
 /**
  *  Tests calcForceExertedByXY
